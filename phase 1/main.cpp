@@ -10,6 +10,15 @@ double execute_and_verify_testcase(std::string test_dir) {
     tokenizer_t file_two(test_dir + "/two.cpp");
     std::vector<int> submission1 = file_one.get_tokens();
     std::vector<int> submission2 = file_two.get_tokens();
+
+//     for(int i = 0 ; i < submission1.size(); i ++){
+//         std::cout << submission1[i] << " ";
+//     }
+//     std::cout << std::endl << std::endl << std::endl;
+//     for(int i = 0 ; i < submission2.size(); i ++){
+//         std::cout << submission2[i] << " ";
+//     }
+
     std::array<int, 5> output = match_submissions(submission1, submission2);
 
     std::ifstream in(test_dir + "/expected.txt");
